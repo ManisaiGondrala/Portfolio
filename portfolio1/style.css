@@ -1,0 +1,430 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Center all sections except "About" */
+.center-section {
+    text-align: center;
+}
+
+/* Header Navigation Styling */
+header nav {
+    background-color: #1a1a1a;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+header nav:hover {
+    background-color: #0d0d0d;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover {
+    color: #00ffab;
+    transform: translateY(-2px);
+}
+
+.nav-links a i {
+    font-size: 1.2rem;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    font-size: 2rem;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #1a1a1a;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+
+/* About Section */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.image-animation {
+    position: relative;
+    display: inline-block;
+}
+
+.image-animation::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 230px;
+    height: 230px;
+    background: linear-gradient(45deg, #dc8011, #ffffff, #00ffab);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: rotate 6s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* About Text */
+.about-text {
+    max-width: 600px;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.highlight {
+    color: #00ffab;
+    font-weight: bold;
+}
+
+/* Import the font */
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,900');
+
+/* Container Styling */
+.container {
+    margin-top: 40px;
+}
+
+/* Card Styling */
+.skill-card {
+    border-radius: 8px;
+    background: #1f1f1f;
+    color: #00ffab;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s cubic-bezier(0.155, 1.105, 0.295, 1.12), box-shadow 0.3s;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.skill-card h3 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skill-card {
+        margin: 10px 0;
+    }
+}
+
+/* Timeline Styling */
+/* General Styling */
+:root { --main-color: #00ffab; }
+
+.main-timeline {
+    position: relative;
+    margin: 20px auto;
+    padding: 20px 0;
+    width: 90%;
+    list-style-type: none;
+}
+
+.main-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--main-color);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.timeline-content {
+    position: relative;
+    padding: 20px 30px;
+    background: #1f1f1f;
+    border-radius: 6px;
+    text-align: center;
+    color: #f0f0f0;
+    width: 50%;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.timeline-year {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--main-color);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Scroll Animation */
+.timeline-content {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+.timeline-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .main-timeline::before {
+        left: 20px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 40px);
+        text-align: left;
+        padding-left: 50px;
+    }
+
+    .timeline-year {
+        left: 20px;
+        transform: translateX(0);
+    }
+}
+
+/* Projects, Certifications, and Cards */
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    width: 300px;
+    color: #00ffab;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background-color: #00ffab;
+    color: black;
+    box-shadow: 0 0 30px #00ffab;
+}
+
+/* Card Image Styling */
+.card-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Social Links */
+.social-links a {
+    display: inline-block;
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+    color: #00ffab;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Section Spacing */
+.section {
+    padding: 80px 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #1a1a1a;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    
+}
+/* GitHub Section */
+#github h2 {
+    color: #00ffab;
+    margin-bottom: 30px;
+}
+
+/* GitHub Repositories Card Styling */
+#repo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.repo-card {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    width: 300px;
+    color: #00ffab;
+    text-align: center;
+    text-decoration: none;  /* Ensure text decoration is removed for link */
+}
+
+.repo-card:hover {
+    transform: translateY(-10px);
+    background-color: #00ffab;
+    color: black;
+    box-shadow: 0 0 30px #00ffab;
+}
+
+/* Responsive Design for GitHub Repositories */
+@media (max-width: 768px) {
+    #repo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .repo-card {
+        width: 90%;
+    }
+}
