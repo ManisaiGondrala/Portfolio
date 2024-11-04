@@ -63,7 +63,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/ManisaiGondrala/portfolio.git
+    git clone https://github.com/ManisaiGondrala/Portfolio.git
     ```
 2. Open the `index.html` file in your browser.
 
@@ -75,6 +75,3 @@ To run this project locally, follow these steps:
 - Font Awesome for icons
 - Google Fonts for typography
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
